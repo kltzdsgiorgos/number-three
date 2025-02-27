@@ -20,7 +20,7 @@ def upload_workout(request):
             workout = form.save(commit=False)
             workout.user = request.user
             workout.save()
-            process_fit_file(workout.file.path, workout)
+            process_fit_file(workout.file_path, workout)
             return redirect("workouts:dashboard")
     else:
         form = WorkoutUploadForm()
