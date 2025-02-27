@@ -6,6 +6,7 @@ class Workout(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     uploaded_at = models.DateTimeField(auto_now_add=True)
     workout_name = models.CharField(max_length=255, blank=True, null=True)
+    # file_path = models.FileField()
 
     def __str__(self):
         return f"{self.workout_name} - {self.uploaded_at}"
